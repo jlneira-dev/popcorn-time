@@ -22,6 +22,7 @@ function App() {
     e.preventDefault();
 
     const newMovie = {
+      id: Math.max(...moviesToDisplay.map(movie => movie.id)) + 1,
       title: title,
       year: parseInt(year),
     }
