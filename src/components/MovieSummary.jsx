@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export function MovieSummary ({movieDetails, callbackToDelete}) {
     
     return (
