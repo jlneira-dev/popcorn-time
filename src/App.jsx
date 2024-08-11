@@ -13,16 +13,17 @@ function App() {
 
   const [moviesToDisplay, setMoviesToDisplay] = useState(movies);
   const [title, setTitle] = useState("")
+  const [year, setYear] = useState("")
 
-  const deleteMovie = movieId => {
-    setMoviesToDisplay(moviesToDisplay.filter(movie => movie.id !== movieId))
-  }
+  const deleteMovie = movieId => setMoviesToDisplay(moviesToDisplay.filter(movie => movie.id !== movieId))
+
 
   const handleSubmit = e => {
     e.preventDefault();
 
     const newMovie = {
       title: title,
+      year: parseInt(year),
     }
 
     setMoviesToDisplay([newMovie, ...moviesToDisplay])
@@ -41,13 +42,27 @@ function App() {
         <h2>Create your own movie:</h2>
         <form onSubmit={handleSubmit}>
           <label>
-            Title
+            Title:
             <input 
               type="text" 
               name="title" 
-              placeholder="Enter the title" 
+              required
+              placeholder="The Godfather" 
               value={title} 
               onChange={e => setTitle(e.target.value)}
+            />
+          </label>
+          <label>
+            Year:
+            <input 
+              type="number" 
+              name="year" 
+              required
+              placeholder="1999" 
+              min={1900}
+              max={2100}
+              value={year} 
+              onChange={e => setYear(e.target.value)}
             />
           </label>
           <p>
