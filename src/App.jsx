@@ -6,6 +6,7 @@ import { MovieList } from "./components/MovieList"
 import { Footer } from "./components/Footer"
 
 import movies from "./data/movies.json"
+import { MovieDetails } from "./components/MovieDetails";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MovieList moviesToDisplay={moviesToDisplay} callbackToDelete={deleteMovie}/>}/>
         <Route path="/about" element={<p>This is the about page</p>}/>
+        <Route path="/movies/:movieId" element={<MovieDetails moviesToDisplay={moviesToDisplay}/>}/> 
         <Route path="*" element={<h1>Page not found</h1>}/>
       </Routes>
 

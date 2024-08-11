@@ -1,4 +1,4 @@
-import { Movie } from "./Movie";
+import { MovieSummary } from "./MovieSummary";
 
 export function MovieList ({moviesToDisplay, callbackToDelete}) {
 
@@ -8,7 +8,7 @@ export function MovieList ({moviesToDisplay, callbackToDelete}) {
             <h1>List of Movies:</h1>
 
             {moviesToDisplay.map(movieDetails => {
-                return <Movie 
+                return <MovieSummary 
                     key={movieDetails.id} 
                     movieDetails={movieDetails}
                     callbackToDelete={callbackToDelete}
