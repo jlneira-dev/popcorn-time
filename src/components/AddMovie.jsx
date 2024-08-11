@@ -14,6 +14,9 @@ export function AddMovie ({callbackToCreate}) {
         }
 
         callbackToCreate(movieDetails);
+
+        setTitle("");
+        setYear("");
     
     }
 
